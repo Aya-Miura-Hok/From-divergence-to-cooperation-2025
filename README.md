@@ -38,3 +38,17 @@ For example:
 All plots and tables will be displayed directly in the R session.
 No files will be saved to disk by default.
 If you wish to export figures, please modify the relevant scripts to include ggsave() or similar output functions.
+
+## Additional Workflow: QIIME2-based SparCC network analysis
+This repository includes a reproducible pipeline for network analysis based on SparCC correlation metrics using QIIME 2 and SCNIC.
+
+To run the QIIME2 workflow, please refer to the instructions in:
+- `scripts/qiime_sparcc_workflow.md` (or `.sh` if you prefer shell scripts)
+
+This workflow requires:
+- QIIME 2 (tested with version 2024.2)
+- SCNIC plugin for QIIME 2
+- Python 3.x (for optional network formatting and hub detection)
+
+Note: These steps assume you have already preprocessed the ASV table and taxonomy files using QIIME2-compatible formats. See the script for details.
+
