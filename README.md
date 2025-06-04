@@ -34,7 +34,7 @@ You can execute each script in the scripts/ folder depending on your interest (e
 For example:
 <pre><code>source("scripts/dbRDA_analysis.R") </code></pre>
 
-Output
+#Output
 All plots and tables will be displayed directly in the R session.
 No files will be saved to disk by default.
 If you wish to export figures, please modify the relevant scripts to include ggsave() or similar output functions.
