@@ -1,6 +1,13 @@
 # Code for: "From divergence to cooperation: Microbial complementarity and symbiotic coexistence in stream biofilms"
 This repository contains code used for statistical analyses and figure generation in the above manuscript.
 
+## Data availability
+All datasets used in the analysis are available on both:
+- GitHub repository: [link]
+- Zenodo (DOI): [DOI link]
+
+The `read.csv()` calls in the analysis scripts refer to the GitHub raw files, which are archived under the same Zenodo DOI for reproducibility.
+
 ## Raw sequence data
 The raw amplicon sequencing data have been deposited in the DNA Data Bank of Japan (DDBJ) under the BioProject accession number: **PRJDB16188**.
 
