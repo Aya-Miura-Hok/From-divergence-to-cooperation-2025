@@ -21,24 +21,24 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 ## How to run
 1. Clone this repository
 Download or clone the repository to your local environment:
-’’’
+```
 git clone https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025.git 
 cd From-divergence-to-cooperation-2025
-’’’
+```
 
 3. Install R and required packages
 Ensure you have R (version ≥ 4.3.0) installed.
 Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
-’’’
+```
 source("scripts/setup.R")
-’’’
+```
 
 3. Run analysis scripts
 You can execute each script in the scripts/ folder depending on your interest (e.g., dbRDA, diversity metrics, pathway analysis).
 For example:
-’’’
+```
 source("scripts/dbRDA_analysis.R")
-’’’
+```
 
 ## Output
 All plots and tables will be displayed directly in the R session.
