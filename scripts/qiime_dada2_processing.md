@@ -15,5 +15,26 @@ Sample01,/path/to/Sample01_R2.fastq.gz,reverse
 ...
 ```
 
-## 1. Prepare Manifest Files
+## 2. Import FASTQ Files
+```
+# For bacteria
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path manifest_bac.csv \
+  --output-path paired-end-demux_bac.qza \
+  --input-format PairedEndFastqManifestPhred33
 
+# For fungi
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path manifest_fun.csv \
+  --output-path paired-end-demux_fun.qza \
+  --input-format PairedEndFastqManifestPhred33
+
+# For eukaryotes
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path manifest_euk.csv \
+  --output-path paired-end-demux_euk.qza \
+  --input-format PairedEndFastqManifestPhred33
+```
