@@ -52,3 +52,6 @@ This workflow requires:
 
 Note: These steps assume you have already preprocessed the ASV table and taxonomy files using QIIME2-compatible formats. See the script for details.
 
+## Preprocessing (FASTQ to ASV CSV)
+Raw FASTQ files were processed using QIIME2 and DADA2 to generate ASV and taxonomy tables.  
+All commands used for QIIME2 preprocessing are described in [`scripts/qiime_dada2_processing.md`](scripts/qiime_dada2_processing.md).
