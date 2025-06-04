@@ -1,0 +1,25 @@
+﻿Date,Water_Depth,Area,δ13C,δ15N,HIX,BIX
+Day_0,surface water,1,NA,NA,4,0.7
+Day_0,surface water,2,NA,NA,4.69,0.65
+Day_0,surface water,3,NA,NA,3.28,0.67
+Day_0,surface water,4,NA,NA,2.36,0.82
+Day_12,surface water,1,-25.4,NA,2.2,0.82
+Day_12,hyporheic 5cm water,1,-25.39,NA,2.4,0.8
+Day_12,hyporheic 20cm water,1,-24.43,1.51,1.75,0.87
+Day_12,surface water,2,-25.13,1.17,3.8,0.68
+Day_12,surface water,3,NA,NA,2.29,0.76
+Day_12,hyporheic 5cm water,3,-26.32,2.08,2.98,0.76
+Day_12,hyporheic 20cm water,3,-25.68,2.19,1.98,0.86
+Day_12,surface water,4,-24.64,1.7,2.53,0.81
+Day_12,hyporheic 5cm water,4,-25.05,3.36,1.82,0.77
+Day_12,hyporheic 20cm water,4,-24.92,3.31,2.05,0.81
+Day_30,surface water,1,-25.19,1.29,4.24,0.71
+Day_30,hyporheic 5cm water,1,NA,NA,NA,NA
+Day_30,hyporheic 20cm water,1,-25.37,1.29,4.68,0.69
+Day_30,surface water,2,-26.92,-0.33,5.24,0.67
+Day_30,surface water,3,-25.14,0.87,3.64,0.71
+Day_30,hyporheic 5cm water,3,-23.88,1.81,2.62,0.76
+Day_30,hyporheic 20cm water,3,-27.13,1.22,3.44,0.78
+Day_30,surface water,4,-24.93,1.67,3.64,0.77
+Day_30,hyporheic 5cm water,4,-25.98,3.34,3.23,0.77
+Day_30,hyporheic 20cm water ,4,-25.91,2.56,3.05,0.78
