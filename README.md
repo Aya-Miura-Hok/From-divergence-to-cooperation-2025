@@ -30,6 +30,3 @@ Then, run the following in R or RStudio to install all required packages (includ
 
 3. Run the main analysis:
 After installing dependencies, execute the main analysis
-
-## License
-This code is licensed under the MIT License. See LICENSE file for details.
