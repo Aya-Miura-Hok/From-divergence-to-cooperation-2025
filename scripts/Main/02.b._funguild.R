@@ -9,10 +9,10 @@ library(RColorBrewer)
 # Set default ggplot theme
 theme_set(theme_bw())
 
-# Load metadata, ASV table, and taxonomy (with FUNGuild annotations)
-sample_sheet <- read.csv("sample_data_env.csv", row.names = 1)
-asv_sheet <- read.csv("1114otu_data.csv", row.names = 1)
-tax_sheet <- read.csv("funguild_input_guilds.csv", row.names = 1)
+# Load input data (metadata, OTU table, taxonomy)
+sample_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/sample_data_env.csv", row.names = 1)
+asv_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/1114otu_data.csv", row.names = 1)
+tax_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/funguild_input_guilds.csv", row.names = 1)
 
 # Construct phyloseq object
 ps_funguild <- phyloseq(

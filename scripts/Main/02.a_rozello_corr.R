@@ -11,9 +11,9 @@ library(ggpmisc)
 theme_set(theme_bw())
 
 # Load input data (metadata, OTU table, taxonomy)
-sample_sheet <- read.csv("sample_sheet_exp.csv", row.names = 1)
-asv_sheet <- read.csv("otu_table_exp.csv", row.names = 1)
-tax_sheet <- read.csv("taxonomy_table_exp.csv", row.names = 1)
+sample_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/eukaryote/sample_sheet_exp.csv", row.names = 1)
+asv_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/eukaryote/otu_table_exp.csv", row.names = 1)
+tax_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/eukaryote/taxonomy_table_exp.csv", row.names = 1)
 
 # Construct phyloseq object
 ps_all <- phyloseq(
@@ -54,7 +54,7 @@ df_phylum <- psmelt(Unknown) %>%
 boxplot(Abundance ~ Site, data = df_phylum, main = "Unknown Abundance by Site")
 
 # Load pre-processed Rozellomycota abundance data
-df_phylum_Rozello <- read.csv("df_phylum_Rozello.csv", stringsAsFactors = FALSE)
+df_phylum_Rozello <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/eukaryote/df_phylum_Rozello.csv", stringsAsFactors = FALSE)
 
 # Merge 'Unknown' and Rozellomycota data by sample
 merged_df <- left_join(df_phylum_Rozello, df_phylum, by = "Sample")

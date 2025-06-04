@@ -11,9 +11,9 @@ library(RColorBrewer)
 theme_set(theme_bw())
 
 # --- [1] Load metadata, OTU table, and taxonomy ---
-sample_sheet <- read.csv("metadata_bac.csv", row.names = 1)
-asv_sheet <- read.csv("otu_table_exp.csv", row.names = 1)
-tax_sheet <- read.csv("taxonomy_table.csv", row.names = 1)
+sample_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/metadata_bac.csv", row.names = 1)
+asv_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/otu_table_exp.csv", row.names = 1)
+tax_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/taxonomy_table.csv", row.names = 1)
 
 ps_all <- phyloseq(
   otu_table(asv_sheet, taxa_are_rows = FALSE),
@@ -44,7 +44,7 @@ df_env <- as(sample_data(pseq), "data.frame") %>%
 df_combined <- inner_join(df_otu, df_env, by = "Sample")
 
 # --- [5] Load and normalize pathway abundance data ---
-df_pathabun <- read.csv("pathabunｰfeature-table.biom.csv", row.names = 1, check.names = FALSE)
+df_pathabun <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/pathabunｰfeature-table.biom.csv", row.names = 1, check.names = FALSE)
 df_pathabun_norm <- df_pathabun / rowSums(df_pathabun)
 
 # Select biologically relevant pathways (predefined)
