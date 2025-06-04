@@ -4,8 +4,8 @@ library(dplyr)
 library(tidyr)
 library(readr)
 
-# Load data
-data <- read_csv("e01.water_quality.csv")
+# Load input data
+data <- read_csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/environmental_data/e01.water_quality.csv")
 
 # Clean and reformat depth labels
 data <- data %>%

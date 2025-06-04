@@ -9,8 +9,8 @@ library(rlang)
 theme_set(theme_bw())
 
 # Load data
-diversity <- read.csv("iNEXT_Sitewise_Results_coverage_based_site.csv")
-sample_sheet <- read.csv("sample_data_env.csv", row.names = 1)
+diversity <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/iNEXT_Sitewise_Results_coverage_based_site.csv")
+sample_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/sample_data_env.csv", row.names = 1)
 sample_sheet$SampleName <- rownames(sample_sheet)
 
 # Extract coverage ~0.95 and q = 0, 1, 2

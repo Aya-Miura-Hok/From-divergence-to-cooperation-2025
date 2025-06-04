@@ -8,7 +8,7 @@ library(tidyr)
 theme_set(theme_bw())
 
 # Load input data
-data <- read_csv("e01.water_quality.csv")
+data <- read_csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/environmental_data/e01.water_quality.csv")
 
 # Filter rows with both δ13C and δ15N values available
 data_filtered <- data %>%

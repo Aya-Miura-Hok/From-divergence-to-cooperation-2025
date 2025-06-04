@@ -7,10 +7,10 @@ library(rstatix)   # Kruskal-Wallis + Dunn
 
 theme_set(theme_bw())
 
-# Load data
-sample_sheet <- read.csv("sample_data_env.csv", row.names = 1)
-asv_sheet <- read.csv("1114otu_data.csv", row.names = 1)
-tax_sheet <- read.csv("1114tax_data.csv", row.names = 1)
+# Load input data (metadata, OTU table, taxonomy)
+sample_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/sample_data_env.csv", row.names = 1)
+asv_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/1114otu_data.csv", row.names = 1)
+tax_sheet <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/1114tax_data.csv", row.names = 1)
 
 # Create phyloseq object
 ps_all <- phyloseq(
