@@ -46,7 +46,7 @@ To run the QIIME2 workflow, please refer to the instructions in:
 - `scripts/qiime_sparcc_workflow.md` (or `.sh` if you prefer shell scripts)
 
 This workflow requires:
-- QIIME 2 (tested with version 2024.2)
+- QIIME 2 (tested with version 2021.8)
 - SCNIC plugin for QIIME 2
 - Python 3.x (for optional network formatting and hub detection)
 
