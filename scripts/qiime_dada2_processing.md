@@ -12,7 +12,7 @@ Create a manifest CSV file for each dataset (example: `manifest_bac.csv`, `manif
 sample-id,absolute-filepath,direction
 Sample01,/path/to/Sample01_R1.fastq.gz,forward
 Sample01,/path/to/Sample01_R2.fastq.gz,reverse
-...
+... ```
 
-## 2. Import FASTQ Files
+## 1. Prepare Manifest Files
 
