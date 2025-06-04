@@ -28,7 +28,7 @@ Ensure you have R (version ≥ 4.3.0) installed.
 Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
 <pre><code> source("scripts/setup.R") </code></pre>
 
-3. Run the main analysi
+3. Run the main analysis
 After installing dependencies, execute the main analysis
 
 ## License
