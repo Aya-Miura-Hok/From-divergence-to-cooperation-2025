@@ -15,7 +15,7 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 
 ## Requirements
 - R version 4.3.0 or later
-- Packages: vegan, picante, ggplot2, etc. (see `scripts/setup.R`)
+- Packages: vegan, phyloseq, ggplot2, etc. (see `scripts/setup.R`)
 
 ## How to run
 1. Clone this repository
