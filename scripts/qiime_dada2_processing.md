@@ -152,5 +152,5 @@ qiime feature-table tabulate-seqs \
 ```
 
 ## Note
-    .qzv files can be opened using QIIME2 View
-    Trimming parameters were selected based on subsampled read quality profiles.
+.qzv files can be opened using QIIME2 View
+Trimming parameters were selected based on subsampled read quality profiles.
