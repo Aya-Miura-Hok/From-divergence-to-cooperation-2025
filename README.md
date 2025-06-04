@@ -56,7 +56,9 @@ Note: These steps assume you have already preprocessed the ASV table and taxonom
 Raw FASTQ files were processed using QIIME2 and DADA2 to generate ASV and taxonomy tables.  
 All commands used for QIIME2 preprocessing are described in [`scripts/qiime_dada2_processing.md`](scripts/qiime_dada2_processing.md).
 
+
 ---
+
 
 ### License
 This repository is shared under the MIT License.
