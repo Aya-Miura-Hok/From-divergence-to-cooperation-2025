@@ -21,18 +21,24 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 ## How to run
 1. Clone this repository
 Download or clone the repository to your local environment:
-<pre><code> git clone https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025.git 
- cd From-divergence-to-cooperation-2025 </code></pre>
+’’’
+git clone https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025.git 
+cd From-divergence-to-cooperation-2025
+’’’
 
-2. Install R and required packages
+3. Install R and required packages
 Ensure you have R (version ≥ 4.3.0) installed.
 Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
-<pre><code> source("scripts/setup.R") </code></pre>
+’’’
+source("scripts/setup.R")
+’’’
 
 3. Run analysis scripts
 You can execute each script in the scripts/ folder depending on your interest (e.g., dbRDA, diversity metrics, pathway analysis).
 For example:
-<pre><code>source("scripts/dbRDA_analysis.R") </code></pre>
+’’’
+source("scripts/dbRDA_analysis.R")
+’’’
 
 ## Output
 All plots and tables will be displayed directly in the R session.
@@ -62,6 +68,3 @@ All commands used for QIIME2 preprocessing are described in [`scripts/qiime_dada
 
 ### License
 This repository is shared under the MIT License.
-
-### Contact
-For questions or feedback, please contact: a-miura@ees.hokudai.ac.jp
