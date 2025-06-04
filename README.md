@@ -20,13 +20,13 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 ## How to run
 1. Clone this repository
 Download or clone the repository to your local environment:
-<pre><code>```bash git clone https://github.com/YourUsername/your-repo-name.git
-  cd your-repo-name ``` </code></pre>
+<pre><code> git clone https://github.com/YourUsername/your-repo-name.git
+  cd your-repo-name </code></pre>
 
 2. Install R and required packages
 Ensure you have R (version ≥ 4.3.0) installed.
 Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
-<pre><code>``` r source("scripts/setup.R") ``` </code></pre>
+<pre><code> source("scripts/setup.R") </code></pre>
 
 3. Run the main analysi
 After installing dependencies, execute the main analysis
