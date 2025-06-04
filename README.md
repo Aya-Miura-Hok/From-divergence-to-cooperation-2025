@@ -37,7 +37,7 @@ source("scripts/setup.R")
 You can execute each script in the scripts/ folder depending on your interest (e.g., dbRDA, diversity metrics, pathway analysis).
 For example:
 ```
-source("scripts/dbRDA_analysis.R")
+source("scripts/Main/01.a_dbRDA_ef_f.R")
 ```
 
 ## Output
