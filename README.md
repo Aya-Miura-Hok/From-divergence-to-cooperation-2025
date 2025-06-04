@@ -2,7 +2,7 @@
 This repository contains code used for statistical analyses and figure generation in the above manuscript.
 
 ## Raw sequence data
-The raw amplicon sequencing data (16S and 18S rRNA) have been deposited in the DNA Data Bank of Japan (DDBJ) under the BioProject accession number: **PRJDB16188**.
+The raw amplicon sequencing data have been deposited in the DNA Data Bank of Japan (DDBJ) under the BioProject accession number: **PRJDB16188**.
 
 You can access the raw FASTQ files at:
 [https://ddbj.nig.ac.jp/resource/bioproject/PRJDB16188](https://ddbj.nig.ac.jp/resource/bioproject/PRJDB16188)
