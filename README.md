@@ -11,7 +11,8 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 
 ## Folder structure
 - `scripts/`: R scripts used for data processing, modeling, and visualization
-- `data/`: Sample input data (for demonstration; full dataset available upon request or via Zenodo)
+- `data/`: Sample input data
+- `scripts/setup.R`: Installs all required R packages
 
 ## Requirements
 - R version 4.3.0 or later
@@ -28,5 +29,12 @@ Ensure you have R (version ≥ 4.3.0) installed.
 Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
 <pre><code> source("scripts/setup.R") </code></pre>
 
-3. Run the main analysis:
-After installing dependencies, execute the main analysis
+3. Run analysis scripts
+You can execute each script in the scripts/ folder depending on your interest (e.g., dbRDA, diversity metrics, pathway analysis).
+For example:
+<pre><code>source("scripts/dbRDA_analysis.R") </code></pre>
+
+Output
+All plots and tables will be displayed directly in the R session.
+No files will be saved to disk by default.
+If you wish to export figures, please modify the relevant scripts to include ggsave() or similar output functions.
