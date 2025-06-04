@@ -15,12 +15,21 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 
 ## Requirements
 - R version 4.3.0 or later
-- Packages: vegan, phyloseq, ggplot2, etc. (see `scripts/setup.R`)
+- Required R packages are listed and installed via scripts/setup.R
 
 ## How to run
 1. Clone this repository
-2. Run `scripts/main_analysis.R`
-3. Outputs will be saved in `output/`
+Download or clone the repository to your local environment:
+git clone https://github.com/YourUsername/your-repo-name.git
+cd your-repo-name
+
+2. Install R and required packages
+Ensure you have R (version ≥ 4.3.0) installed.
+Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
+source("scripts/setup.R")
+
+3. Run the main analysi
+After installing dependencies, execute the main analysis
 
 ## License
 This code is licensed under the MIT License. See LICENSE file for details.
