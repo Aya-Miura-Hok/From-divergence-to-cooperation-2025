@@ -47,7 +47,7 @@ wide_df <- summary_df %>%
   mutate(Group = factor(Group, levels = group_levels))
 
 # Generate dual-axis plot with legend
-ggplot(wide_df, aes(x = Group)) +
+p <- ggplot(wide_df, aes(x = Group)) +
   geom_point(aes(y = Mean_HIX, color = "HIX"), shape = 21, fill = "black", size = 3) +
   geom_errorbar(aes(ymin = Mean_HIX - SD_HIX, ymax = Mean_HIX + SD_HIX, color = "HIX"), width = 0.2) +
   geom_point(aes(y = Mean_BIX * 6, color = "BIX"), shape = 22, fill = "gray60", size = 3) +
@@ -72,3 +72,5 @@ ggplot(wide_df, aes(x = Group)) +
     legend.text = element_text(size = 10),
     legend.position = "right"
   )
+
+print(p)

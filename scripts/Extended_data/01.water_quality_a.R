@@ -33,7 +33,7 @@ summary_df <- data_filtered %>%
   )
 
 # Generate plot with error bars
-ggplot(summary_df, aes(x = mean_d13C, y = mean_d15N)) +
+p <- ggplot(summary_df, aes(x = mean_d13C, y = mean_d15N)) +
   geom_point(aes(shape = Site, fill = Depth), size = 4, color = "black") +
   geom_errorbar(aes(ymin = mean_d15N - sd_d15N, ymax = mean_d15N + sd_d15N), width = 0.1) +
   geom_errorbarh(aes(xmin = mean_d13C - sd_d13C, xmax = mean_d13C + sd_d13C), height = 0.1) +
@@ -56,3 +56,5 @@ ggplot(summary_df, aes(x = mean_d13C, y = mean_d15N)) +
     axis.title = element_text(size = 14),
     axis.text = element_text(size = 12)
   )
+
+print(p)

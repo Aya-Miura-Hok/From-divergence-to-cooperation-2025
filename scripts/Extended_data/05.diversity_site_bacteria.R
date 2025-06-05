@@ -67,12 +67,10 @@ collect_results <- function(results_list, type) {
   do.call(rbind, all_results)
 }
 
-size_df <- collect_results(iNEXT_results, "size_based")
 coverage_df <- collect_results(iNEXT_results, "coverage_based")
 
 # Save to CSV
-write.csv(size_df, "iNEXT_Sitewise_Results_size_based_site.csv", row.names = FALSE)
-write.csv(coverage_df, "iNEXT_Sitewise_Results_coverage_based_site.csv", row.names = FALSE)
+write.csv(coverage_df, "https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/iNEXT_Sitewise_Results_coverage_based_site.csv", row.names = FALSE)
 
 # Load required libraries
 library(dplyr)         # Data manipulation
@@ -84,7 +82,7 @@ library(purrr)         # For map function
 library(gridExtra)     # To arrange multiple plots
 
 # Load iNEXT results
-coverage_based_results <- read.csv("iNEXT_Sitewise_Results_coverage_based_site.csv")
+coverage_based_results <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/iNEXT_Sitewise_Results_coverage_based_site.csv")
 
 # Filter rows with coverage ~0.95
 coverage_95_results <- dplyr::filter(coverage_based_results, abs(SC - 0.95) < 0.01)
@@ -176,9 +174,11 @@ for (q in c(0, 1, 2)) {
 }
 
 # Combine all plots
-gridExtra::grid.arrange(
+p <- gridExtra::grid.arrange(
   plots$Order.q_0,
   plots$Order.q_1,
   plots$Order.q_2,
   nrow = 1
 )
+
+print(p)

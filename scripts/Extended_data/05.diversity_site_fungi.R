@@ -83,7 +83,7 @@ library(purrr)
 library(gridExtra)
 
 # Load iNEXT coverage-based output
-data <- read.csv("iNEXT_Sitewise_Results_coverage_based_site.csv")
+data <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/fungi/iNEXT_Sitewise_Results_coverage_based_site.csv")
 
 # Extract diversity indices (q = 0, 1, 2) at SC ≈ 0.95
 diversity_data <- data %>%
@@ -176,9 +176,11 @@ for (q in c(0, 1, 2)) {
 }
 
 # Display all plots in one row
-grid.arrange(
+p <- grid.arrange(
   plots$Order.q_0,
   plots$Order.q_1,
   plots$Order.q_2,
   nrow = 1
 )
+
+print(p)

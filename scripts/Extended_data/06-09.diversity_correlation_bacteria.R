@@ -67,7 +67,12 @@ plot_env_group <- function(var_name, x_label, cor_position = "topright") {
 }
 
 # Generate plots
-plot_env_group("HIX", "HIX")
-plot_env_group("d13C", "δ13C")
-plot_env_group("DOC", "DOC", cor_position = "topleft")
-plot_env_group("POC", "POC")
+p1 <- plot_env_group("HIX", "HIX")
+p2 <- plot_env_group("d13C", "δ13C")
+p3 <- plot_env_group("DOC", "DOC", cor_position = "topleft")
+p4 <- plot_env_group("POC", "POC")
+
+print(p1)
+print(p2)
+print(p3)
+print(p4)

@@ -99,7 +99,7 @@ library(purrr)
 library(gridExtra)
 
 # Load coverage-based diversity estimates
-coverage_based_results <- read.csv("iNEXT_Sitewise_Results_coverage_based_type.csv")
+coverage_based_results <- read.csv("https://raw.githubusercontent.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025/refs/heads/main/data/bacteria/iNEXT_Sitewise_Results_coverage_based_type.csv")
 
 # Filter rows close to SC = 0.95
 coverage_95_results <- dplyr::filter(coverage_based_results, abs(SC - 0.95) < 0.01)
@@ -192,9 +192,11 @@ for (q in c(0, 1, 2)) {
 }
 
 # Display plots side by side
-gridExtra::grid.arrange(
+p <- gridExtra::grid.arrange(
   plots$Order.q_0,
   plots$Order.q_1,
   plots$Order.q_2,
   nrow = 1
 )
+
+print(p)
