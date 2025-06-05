@@ -52,7 +52,7 @@ trophic_levels <- unique(site_summary$Trophic.Mode)
 color_map <- setNames(set3_colors[1:length(trophic_levels)], trophic_levels)
 
 # Plot: Trophic Mode composition
-ggplot(site_summary, aes(x = Site, y = Relative_Abundance, fill = Trophic.Mode)) +
+p <- ggplot(site_summary, aes(x = Site, y = Relative_Abundance, fill = Trophic.Mode)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values = color_map, name = "Trophic Mode") +
   labs(
@@ -69,4 +69,4 @@ ggplot(site_summary, aes(x = Site, y = Relative_Abundance, fill = Trophic.Mode))
     legend.text = element_text(size = 14)
   )
 
- 
+ print(p)

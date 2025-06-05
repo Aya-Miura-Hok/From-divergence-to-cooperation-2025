@@ -122,7 +122,7 @@ site_colors <- c("1" = "#66C2A5", "2" = "#FC8D62", "3" = "#8DA0CB", "4" = "#E78A
 shape_values <- c("leaf" = 16, "sediment_20" = 17, "sediment_5" = 15, "tile_d" = 18, "tile_l" = 19)
 
 # Generate final dbRDA plot
-ggplot() +
+p <- ggplot() +
   geom_point(data = sample_scores, aes(x = CAP1, y = CAP2, color = Site, shape = Type),
              size = 3.2, alpha = 0.9, stroke = 0.6) +
   geom_segment(data = bp_scores, aes(x = 0, y = 0, xend = CAP1, yend = CAP2),
@@ -153,3 +153,5 @@ ggplot() +
     axis.text = element_text(size = 13),
     plot.title = element_text(size = 16, face = "bold")
   )
+
+print(p)

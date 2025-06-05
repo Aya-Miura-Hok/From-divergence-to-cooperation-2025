@@ -123,7 +123,7 @@ species_scores$CAP1 <- species_scores$CAP1 * ko_vectors$vectors$r[sig_pw]
 species_scores$CAP2 <- species_scores$CAP2 * ko_vectors$vectors$r[sig_pw]
 
 # --- [9] Visualize dbRDA results (publication-ready figure) ---
-ggplot() +
+p <- ggplot() +
   geom_point(data = sample_scores,
              aes(x = CAP1, y = CAP2, fill = Site, shape = Type),
              size = 3.5, alpha = 0.9, color = "black") +
@@ -166,3 +166,5 @@ ggplot() +
     legend.text = element_text(size = 14),
     plot.title = element_text(size = 20, face = "bold", hjust = 0.5)
   )
+
+print(p)

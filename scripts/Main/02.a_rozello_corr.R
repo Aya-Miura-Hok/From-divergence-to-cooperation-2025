@@ -68,7 +68,7 @@ cor_result <- cor.test(
 print(cor_result)
 
 # Plot correlation with regression line and statistics
-ggplot(merged_df, aes(x = Abundance.x, y = Abundance.y)) +
+p <- ggplot(merged_df, aes(x = Abundance.x, y = Abundance.y)) +
   geom_point(color = "darkgreen", size = 4) +
   geom_smooth(method = "lm", se = TRUE, color = "blue", size = 1) +
   stat_poly_eq(
@@ -90,3 +90,4 @@ ggplot(merged_df, aes(x = Abundance.x, y = Abundance.y)) +
     axis.title = element_text(size = 18),
     axis.text = element_text(size = 14)
   )
+ print(p)
