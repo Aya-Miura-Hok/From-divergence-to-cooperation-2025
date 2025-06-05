@@ -4,7 +4,7 @@ This repository contains code used for statistical analyses and figure generatio
 ## Data availability
 All datasets used in the analysis are available on both:
 - GitHub repository: https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025
-- Zenodo (DOI): [https://doi.org/10.5281/zenodo.15589956](https://doi.org/10.5281/zenodo.15597378)](https://doi.org/10.5281/zenodo.15597506)
+- Zenodo (DOI): (https://doi.org/10.5281/zenodo.15597378)](https://doi.org/10.5281/zenodo.15597506)
 
 The `read.csv()` calls in the analysis scripts refer to the GitHub raw files, which are archived under the same Zenodo DOI for reproducibility.
 
