@@ -1,4 +1,4 @@
-# Code for: "From divergence to cooperation: Microbial complementarity and symbiotic coexistence in stream biofilms"
+# Code for: "Emergent microbial complementarity in river biofilms: From divergent traits to symbiotic coexistence"
 This repository contains code used for statistical analyses and figure generation in the above manuscript.
 
 ## Data availability
