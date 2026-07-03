@@ -1,12 +1,10 @@
-# Code for: "Emergent microbial complementarity in river biofilms: From divergent traits to symbiotic coexistence"
+# Code for: "Multi-domain microbial organization in river biofilms: Environmental drivers and interaction networks at the watershed scale"
 This repository contains code used for statistical analyses and figure generation in the above manuscript.
 
 ## Data availability
 All datasets used in the analysis are available on both:
 - GitHub repository: https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025
-- Zenodo (DOI): https://doi.org/10.5281/zenodo.15597506
-
-The `read.csv()` calls in the analysis scripts refer to the GitHub raw files, which are archived under the same Zenodo DOI for reproducibility.
+- Zenodo (DOI): https://doi.org/10.5281/zenodo.15589956
 
 ## Raw sequence data
 The raw amplicon sequencing data have been deposited in the DNA Data Bank of Japan (DDBJ) under the BioProject accession number: **PRJDB16188**.
@@ -18,8 +16,11 @@ Sample metadata and mapping files used for analysis are available in the `data/`
 
 ## Folder structure
 - `scripts/`: R scripts used for data processing, modeling, and visualization
-- `data/`: Sample input data
+  - `scripts/Main/`: Scripts used for analyses and figures presented in the main manuscript
+  - `scripts/Supplementary/`: Scripts used for supplementary analyses and figures
 - `scripts/setup.R`: Installs all required R packages
+- `data/`: Sample input data
+- `outputs/`: Intermediate phyloseq objects (`*.rds`) used in downstream analyses
 
 ## Requirements
 - R version 4.3.0 or later
@@ -33,7 +34,7 @@ git clone https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025.g
 cd From-divergence-to-cooperation-2025
 ```
 
-3. Install R and required packages
+2. Install R and required packages
 Ensure you have R (version ≥ 4.3.0) installed.
 Then, run the following in R or RStudio to install all required packages (including CRAN and Bioconductor packages):
 ```
@@ -41,15 +42,15 @@ source("scripts/setup.R")
 ```
 
 3. Run analysis scripts
-You can execute each script in the scripts/ folder depending on your interest (e.g., dbRDA, diversity metrics, pathway analysis).
+You can execute each script in the scripts/ folder depending on your interest (e.g., dbRDA, diversity metrics, network analysis).
 For example:
 ```
-source("scripts/Main/01.a_dbRDA_ef_f.R")
+source("scripts/Main/00_1. asv_filter_bac.R")
 ```
 
 ## Output
 All plots and tables will be displayed directly in the R session.
-No files will be saved to disk by default.
+No output files are saved by default.
 If you wish to export figures, please modify the relevant scripts to include ggsave() or similar output functions.
 
 ## Additional Workflow: QIIME2-based SparCC network analysis
@@ -58,7 +59,7 @@ This repository includes a reproducible pipeline for network analysis based on S
 To run the QIIME2 workflow, please refer to the instructions in:
 - `scripts/qiime_sparcc_workflow.md` (or `.sh` if you prefer shell scripts)
 
-This workflow requires:
+Requirements:
 - QIIME 2 (tested with version 2021.8)
 - SCNIC plugin for QIIME 2
 - Python 3.x (for optional network formatting and hub detection)

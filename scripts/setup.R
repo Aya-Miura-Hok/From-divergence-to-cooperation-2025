@@ -8,12 +8,12 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) {
 
 # 2. Define package groups
 cran_packages <- c(
-  "vegan", "ggplot2", "tidyverse", "ggrepel", "ggpmisc", "forcats", "stringr",
-  "RColorBrewer", "magrittr", "readr", "tidyr", "car", "FSA", "rstatix",
-  "grid", "iNEXT", "dplyr", "patchwork", "rlang"
+  "vegan", "ggplot2", "tidyverse", "ranger", "emmeans",
+  "tidyr", "car", "FSA", "rstatix", "ape", 
+  "iNEXT", "dplyr", "patchwork", "ggpubr"
 )
 
-bioc_packages <- c("phyloseq", "microbiome", "microViz", "biomformat")
+bioc_packages <- c("phyloseq", "biomformat")
 
 # 3. Install CRAN packages
 for (pkg in cran_packages) {
@@ -25,7 +25,7 @@ for (pkg in cran_packages) {
 # 4. Install Bioconductor packages
 for (pkg in bioc_packages) {
   if (!requireNamespace(pkg, quietly = TRUE)) {
-    BiocManager::install(pkg, update = FALSE, ask = FALSE)
+    BiocManager::install(pkg, update = FALSE, ask = FALSE, dependencies = TRUE)
   }
 }
 
