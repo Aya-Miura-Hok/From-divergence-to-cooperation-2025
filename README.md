@@ -4,7 +4,7 @@ This repository contains code used for statistical analyses and figure generatio
 ## Data availability
 All datasets used in the analysis are available on both:
 - GitHub repository: https://github.com/Aya-Miura-Hok/From-divergence-to-cooperation-2025
-- Zenodo (DOI): https://doi.org/10.5281/zenodo.21151235
+- Zenodo (DOI): https://doi.org/10.5281/zenodo.21270799
 
 ## Raw sequence data
 The raw amplicon sequencing data have been deposited in the DNA Data Bank of Japan (DDBJ) under the BioProject accession number: **PRJDB16188**.
