@@ -109,7 +109,7 @@ plot_timeseries <- function(var){
         labs(x = "Day", y = ylab_var, color = "Depth", shape = "Site") +
         theme_bw(base_size = 12) +
         theme(
-            text = element_text(family = "Helvetica", size = 13),
+            text = element_text(family = "Arial", size = 13),
             axis.title = element_text(size = 14),
             axis.text  = element_text(size = 12),
             panel.border = element_rect(color = "black"),
@@ -150,3 +150,13 @@ supp_fig <- (
     )
 
 print(supp_fig)
+
+ggsave(
+  filename = "Suppl_Fig2.pdf",
+  plot = supp_fig,
+  device = cairo_pdf,
+  width = 350,
+  height = 200,
+  units = "mm",
+  bg = "white"
+)

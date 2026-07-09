@@ -49,10 +49,10 @@ plot_donut_site <- function(df, group_cols = "Site") {
             position = position_stack(vjust = 0.5),
             size = 4,
             color = "white",
-            family = "Helvetica",
+            family = "Arial",
             fontface = "bold"
         ) +
-        theme_void(base_family = "Helvetica") +
+        theme_void(base_family = "Arial") +
         theme(
             strip.text = element_text(size = 13, face = "bold"),
             legend.position = "right",
@@ -63,7 +63,18 @@ plot_donut_site <- function(df, group_cols = "Site") {
 }
 
 p_site <- plot_donut_site(df_site_long, group_cols = "Site")
-p_site
+
+print(p_site)
+
+ggsave(
+    filename = "Fig6A.pdf",
+    plot = p_site,
+    device = cairo_pdf,
+	width = 180,
+    height = 100,
+    units = "mm",
+    bg = "white"
+)
 
 # ===================================================================
 # Plot Network Positive/Negative Association Ratios (domain-specific)
@@ -108,10 +119,10 @@ plot_donut_domain <- function(df, group_cols = c("Site","Category")) {
       position = position_stack(vjust = 0.5),
       size = 3.2,
       color = "white",
-      family = "Helvetica",
+      family = "Arial",
       fontface = "bold"
     ) +
-    theme_void(base_family = "Helvetica") +
+    theme_void(base_family = "Arial") +
     theme(
       strip.text.x = element_text(size = 11, face = "bold"),
       strip.text.y = element_text(size = 11, face = "bold"),
@@ -130,4 +141,15 @@ p_dom <- plot_donut_domain(df_dom_long, group_cols = c("Site","Category")) +
         strip.switch.pad.grid = unit(0.2, "cm")
     ) +
     facet_grid(Site ~ Category, switch = "y")
-p_dom
+
+print(p_dom)
+
+ggsave(
+    filename = "Fig6B.pdf",
+    plot = p_dom,
+    device = cairo_pdf,
+	width = 180,
+    height = 150,
+    units = "mm",
+    bg = "white"
+)

@@ -105,7 +105,7 @@ gg <- ggplot(plot_df, aes(PCoA1, PCoA2, color = Site, shape = Type)) +
     "3" = "#0072B2",
     "4" = "#CC79A7"
   )) +
-  theme_classic(base_size = 16, base_family = "Helvetica") +
+  theme_classic(base_size = 16, base_family = "Arial") +
   labs(
     x = sprintf("PCoA1 (%.1f%%)", 100 * pcoa$values$Relative_eig[1]),
     y = sprintf("PCoA2 (%.1f%%)", 100 * pcoa$values$Relative_eig[2])
@@ -115,8 +115,8 @@ gg <- ggplot(plot_df, aes(PCoA1, PCoA2, color = Site, shape = Type)) +
     aspect.ratio = 1,
     axis.line = element_blank(),
     axis.ticks = element_line(color = "black"),
-    axis.title = element_text(size = 18),
-    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 20),
+    axis.text = element_text(size = 18),
     legend.title = element_text(size = 16),
     legend.text = element_text(size = 14)
   )
@@ -129,5 +129,12 @@ write.csv(perm_terms_df,
           paste0("outputs/permanova_family_", dataset, ".csv"),
           row.names = FALSE)
 
-ggsave(paste0("outputs/PCoA_family_", dataset, ".png"),
-       gg, width = 6, height = 5, dpi = 300)
+ggsave(
+    filename = "Fig3A.pdf",
+    plot = gg,
+    device = cairo_pdf,
+	width = 180,
+    height = 180,
+    units = "mm",
+    bg = "white"
+)

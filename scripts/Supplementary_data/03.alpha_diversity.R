@@ -80,6 +80,10 @@ csv_file <- file.path(outdir, paste0("alpha_siteSC_", dataset, "_long.csv"))
 # ============================================================
 # Prepare data for statistical analysis and plotting
 # ============================================================
+# csv_file <- "data/bacteria/alpha_siteSC_bySite_commonSC_long.csv"
+# csv_file <- "data/fungi/alpha_siteSC_bySite_commonSC_long.csv"
+# csv_file <- "data/eukaryote/alpha_siteSC_bySite_commonSC_long.csv"
+
 df <- read_csv(csv_file, show_col_types = FALSE)
 
 # Plot Shannon diversity (q = 1)
@@ -141,7 +145,7 @@ p <- ggplot(dfq, aes(x = Type, y = qD, fill = Type)) +
     x = "Substrate type",
     y = "Shannon diversity"
   ) +
-  theme_minimal(base_size = 15, base_family = "Helvetica") +
+  theme_minimal(base_size = 15, base_family = "Arial") +
   theme(
     legend.position = "none",
     axis.title = element_text(
@@ -162,3 +166,13 @@ p <- ggplot(dfq, aes(x = Type, y = qD, fill = Type)) +
   )
 
 print(p)
+
+ggsave(
+  filename = "Suppl_Fig3.pdf",
+  plot = p,
+  device = cairo_pdf,
+  width = 200,
+  height = 200,
+  units = "mm",
+  bg = "white"
+)

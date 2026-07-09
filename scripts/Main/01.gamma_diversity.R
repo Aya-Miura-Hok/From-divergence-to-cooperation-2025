@@ -114,7 +114,7 @@ p_gamma <- ggplot(
     x = "Site",
     y = expression(q[D]~"(estimate ± 95% CI)")
   ) +
-  theme_bw(base_size = 14, base_family = "Helvetica") +
+  theme_bw(base_size = 14, base_family = "Arial") +
   theme(
     panel.border = element_rect(color = "black", linewidth = 0.6),
     axis.title = element_text(size = 13, face = "bold"),
@@ -126,3 +126,13 @@ p_gamma <- ggplot(
   )
 
 print(p_gamma)
+
+ggsave(
+  filename = "Fig2.pdf",
+  plot = p_gamma,
+  device = cairo_pdf,
+  width = 250,
+  height = 70,
+  units = "mm",
+  bg = "white"
+)

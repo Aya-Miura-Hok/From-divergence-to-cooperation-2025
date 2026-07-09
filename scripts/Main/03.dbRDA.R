@@ -160,19 +160,19 @@ p <- ggplot(plot_df, aes(CAP1, CAP2, color = Site, shape = Type)) +
     inherit.aes = FALSE
   ) +
   scale_color_manual(values = c(
-    "1" = "#D55E00",  # reddish brown
-    "2" = "#009E73",  # green
-    "3" = "#0072B2",  # blue
-    "4" = "#CC79A7"   # purple-pink
+    "1" = "#D55E00",
+    "2" = "#009E73",
+    "3" = "#0072B2",
+    "4" = "#CC79A7"
   )) +
-  theme_classic(base_size = 16, base_family = "Helvetica") +
+  theme_classic(base_size = 16, base_family = "Arial") +
   theme(
     panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.8),
     aspect.ratio = 1,
 	axis.line = element_blank(),
     axis.ticks = element_line(color = "black"),
-    axis.title = element_text(size = 18),
-    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 20),
+    axis.text = element_text(size = 18),
     legend.title = element_text(size = 16),
     legend.text = element_text(size = 14),
     plot.title = element_text(size = 20, face = "bold", hjust = 0.5)
@@ -183,3 +183,13 @@ p <- ggplot(plot_df, aes(CAP1, CAP2, color = Site, shape = Type)) +
   )
 
 print(p)
+
+ggsave(
+    filename = "Fig4A.pdf",
+    plot = p,
+    device = cairo_pdf,
+	width = 180,
+    height = 180,
+    units = "mm",
+    bg = "white"
+)

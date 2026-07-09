@@ -156,6 +156,17 @@ readr::write_csv(
 p_rf <- ggplot(imp_all, aes(x = var, y = imp, fill = axis)) +
   geom_col(position = "dodge", width = 0.7) +
   coord_flip() +
+  scale_x_discrete(
+    labels = c(
+      d13C = expression(delta^{13}*C),
+      DOC = "DOC",
+      POC = "POC",
+      TDN = "TDN",
+      TDP = "TDP",
+      HIX = "HIX",
+      BIX = "BIX"
+    )
+  ) +
   scale_fill_manual(values = c(
     "PC1" = "#E59880",
     "PC2" = "#5A6FAE"
@@ -165,7 +176,7 @@ p_rf <- ggplot(imp_all, aes(x = var, y = imp, fill = axis)) +
     y = "Permutation importance",
     fill = "Axis"
   ) +
-  theme_bw(base_family = "Helvetica") +
+  theme_bw(base_family = "Arial") +
   theme(
     aspect.ratio = 1.5,
     axis.text.x = element_text(size = 14, color = "black"),
@@ -181,3 +192,13 @@ p_rf <- ggplot(imp_all, aes(x = var, y = imp, fill = axis)) +
   )
 
 print(p_rf)
+
+ggsave(
+    filename = "Fig5A.pdf",
+    plot = p_rf,
+    device = cairo_pdf,
+	width = 110,
+    height = 180,
+    units = "mm",
+    bg = "white"
+)

@@ -68,11 +68,11 @@ phylum_colors <- c(
   "Other" = "grey80"
 )
 
-ggplot(df_summary, aes(x = Description, y = mean_abund, fill = Phylum)) +
+p <- ggplot(df_summary, aes(x = Description, y = mean_abund, fill = Phylum)) +
   geom_bar(stat = "identity", width = 0.8) +
   scale_fill_manual(values = phylum_colors) +
   labs(x = "Sample", y = "Relative abundance", fill = "Phylum") +
-  theme_bw(base_family = "Helvetica", base_size = 18) +
+  theme_bw(base_family = "Arial", base_size = 18) +
   theme(
     panel.border = element_rect(color = "black", linewidth = 0.6),
     panel.grid = element_blank(),
@@ -83,6 +83,16 @@ ggplot(df_summary, aes(x = Description, y = mean_abund, fill = Phylum)) +
     legend.key.size = unit(0.6, "cm")
   ) +
   theme(aspect.ratio = 0.8)
+
+ggsave(
+  filename = "Suppl_Fig7B.pdf",
+  plot = p,
+  device = cairo_pdf,
+  width = 230,
+  height = 180,
+  units = "mm",
+  bg = "white"
+)
 
 # ============================================================
 # Visualization (Family level)
@@ -122,11 +132,11 @@ palette_pastel <- c(
 
 df$Family <- factor(df$Family, levels = c("Other", setdiff(levels(df$Family), "Other")))
 
-ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
+p <- ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
     geom_bar(stat = "identity", width = 0.8) +
     scale_fill_manual(values = palette_pastel, name = "Family") +
     labs(x = "Sample", y = "Relative abundance") +
-    theme_bw(base_size = 18, base_family = "Helvetica") +
+    theme_bw(base_size = 18, base_family = "Arial") +
     theme(
         panel.grid = element_blank(),
         panel.border = element_rect(color = "black", linewidth = 0.6),
@@ -137,3 +147,13 @@ ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
         axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 13),
         axis.text.y = element_text(size = 15)
     ) + theme(aspect.ratio = 0.8)
+
+ggsave(
+  filename = "Suppl_Fig8B.pdf",
+  plot = p,
+  device = cairo_pdf,
+  width = 230,
+  height = 180,
+  units = "mm",
+  bg = "white"
+)

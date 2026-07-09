@@ -99,7 +99,7 @@ p <- ggplot(df, aes(x = Site, y = log_qpcr, fill = Site)) +
     x = "Site",
     y = expression(log[10]~"(copy number)")
   ) +
-  theme_minimal(base_family = "Helvetica") +
+  theme_minimal(base_family = "Arial") +
   theme(
     axis.text = element_text(size = 14),
     axis.title = element_text(size = 16, face = "bold"),
@@ -108,13 +108,23 @@ p <- ggplot(df, aes(x = Site, y = log_qpcr, fill = Site)) +
     legend.text = element_text(size = 13)
   )
 
-p +
+p <- p +
     labs(tag = "(A) Bacteria") +
     theme(
         plot.tag = element_text(
             size = 22,
             face = "bold",
-            family = "Helvetica"
+            family = "Arial"
         ),
         plot.tag.position = "topleft"
     )
+
+ggsave(
+    filename = "Suppl_Fig6A.pdf",
+    plot = p,
+    device = cairo_pdf,
+	width = 380,
+    height = 100,
+    units = "mm",
+    bg = "white"
+)

@@ -78,11 +78,11 @@ euk_colors <- c(
   "Apicomplexa"  = "#AD8BC9FF"
 )
 
-ggplot(df_summary, aes(x = Description, y = mean_abund, fill = Phylum)) +
+p <- ggplot(df_summary, aes(x = Description, y = mean_abund, fill = Phylum)) +
   geom_bar(stat = "identity", width = 0.8) +
   scale_fill_manual(values = euk_colors, name = "Phylum") +
   labs(x = "Sample", y = "Relative abundance") +
-  theme_bw(base_family = "Helvetica", base_size = 18) +
+  theme_bw(base_family = "Arial", base_size = 18) +
   theme(
     panel.border = element_rect(color = "black", linewidth = 0.6),
     panel.grid = element_blank(),
@@ -94,10 +94,20 @@ ggplot(df_summary, aes(x = Description, y = mean_abund, fill = Phylum)) +
   ) +
   theme(aspect.ratio = 0.8)
 
+ggsave(
+  filename = "Suppl_Fig7C.pdf",
+  plot = p,
+  device = cairo_pdf,
+  width = 230,
+  height = 180,
+  units = "mm",
+  bg = "white"
+)
+
 # ============================================================
 # Visualization (Family level_algae group)
 # ============================================================
-ps_family <- tax_glom(ps_algae, taxrank = "Family")
+ps_family <- tax_glom(ps_final, taxrank = "Family")
 ps_family_rel <- transform_sample_counts(ps_family, function(x) x / sum(x))
 ps_family_merged <- merge_samples(ps_family_rel, "Description")
 
@@ -133,11 +143,11 @@ palette_algae <- c(
 base_levels <- c("Unknown", "Other", top10_families)
 df$Family <- factor(df$Family, levels = unique(base_levels))
 
-ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
+p <- ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
   geom_bar(stat = "identity", width = 0.8) +
   scale_fill_manual(values = palette_algae, name = "Family") +
   labs(x = "Sample", y = "Relative abundance") +
-  theme_bw(base_size = 18, base_family = "Helvetica") +
+  theme_bw(base_size = 18, base_family = "Arial") +
   theme(
     panel.grid = element_blank(),
     panel.border = element_rect(color = "black", linewidth = 0.6),
@@ -150,10 +160,20 @@ ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
   ) +
   theme(aspect.ratio = 0.8)
 
+ggsave(
+  filename = "Suppl_Fig8C.pdf",
+  plot = p,
+  device = cairo_pdf,
+  width = 230,
+  height = 180,
+  units = "mm",
+  bg = "white"
+)
+
 # ============================================================
 # Visualization (Family level_protists group)
 # ============================================================
-ps_family <- tax_glom(ps_protists, taxrank = "Family")
+ps_family <- tax_glom(ps_final, taxrank = "Family")
 ps_family_rel <- transform_sample_counts(ps_family, function(x) x / sum(x))
 ps_family_merged <- merge_samples(ps_family_rel, "Description")
 
@@ -191,11 +211,11 @@ palette_protozoa <- c(
 base_levels <- c("Unknown", "Other", top10_families)
 df$Family <- factor(df$Family, levels = unique(base_levels))
 
-ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
+p <- ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
   geom_bar(stat = "identity", width = 0.8) +
   scale_fill_manual(values = palette_protozoa, name = "Family") +
   labs(x = "Sample", y = "Relative abundance") +
-  theme_bw(base_size = 18, base_family = "Helvetica") +
+  theme_bw(base_size = 18, base_family = "Arial") +
   theme(
     panel.grid = element_blank(),
     panel.border = element_rect(color = "black", linewidth = 0.6),
@@ -207,3 +227,13 @@ ggplot(df, aes(x = Sample, y = Abundance, fill = Family)) +
     axis.text.y = element_text(size = 15)
   ) +
   theme(aspect.ratio = 0.8)
+
+ggsave(
+  filename = "Suppl_Fig8D.pdf",
+  plot = p,
+  device = cairo_pdf,
+  width = 230,
+  height = 180,
+  units = "mm",
+  bg = "white"
+)
