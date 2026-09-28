@@ -62,7 +62,9 @@ plot_df$Site <- factor(plot_df$Site)
 
 # Check homogeneity of multivariate dispersion before PERMANOVA
 bd_site <- betadisper(bray, meta$Site)
-anova(bd_site)
+permutest(bd_site, permutations = 999)
+bd_type <- betadisper(bray, meta$Type)
+permutest(bd_type, permutations = 999)
 
 # ============================================================
 # PERMANOVA
