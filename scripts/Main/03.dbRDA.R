@@ -110,17 +110,40 @@ print(vif.cca(cap_full))
 # ============================================================
 cap_null  <- capscale(hell_use ~ 1 + Condition(replicate), data = df_all, distance = "bray")
 
+perm_design <- how(
+  nperm = 999,
+  blocks = meta_use$replicate
+)
+
 set.seed(123)
-cap_sel <- ordiR2step(cap_null, scope = formula(cap_full),
-                      permutations = 999, trace = 1)
+cap_sel <- ordiR2step(
+  cap_null,
+  scope = formula(cap_full),
+  Pin = 0.05,
+  R2scope = TRUE,
+  permutations = perm_design,
+  trace = 1
+)
 
 cap_final <- cap_sel
+
+cap_sel$anova
+vif.cca(cap_full)
 
 # ============================================================
 # Evaluate the Final dbRDA Model
 # ============================================================
-print(anova(cap_final, permutations = 999, strata = meta_use$replicate))
-print(anova(cap_final, permutations = 999, by = "terms", strata = meta_use$replicate))
+print(anova(
+  cap_final,
+  permutations = perm_design
+))
+
+print(anova(
+  cap_final,
+  permutations = perm_design,
+  by = "terms"
+))
+
 print(RsquareAdj(cap_final))
 
 # ============================================================

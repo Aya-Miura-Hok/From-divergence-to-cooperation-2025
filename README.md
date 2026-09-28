@@ -1,4 +1,4 @@
-# Code for: "Multi-domain microbial organization in river biofilms: Environmental drivers and interaction networks at the watershed scale"
+# Code for: "Organization of multiple microbial groups in river biofilms: Environmental drivers and co-occurrence networks at the watershed scale"
 This repository contains code used for statistical analyses and figure generation in the above manuscript.
 
 ## Data availability

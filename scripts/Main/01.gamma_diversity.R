@@ -103,13 +103,18 @@ p_gamma <- ggplot(
     )
   ) +
   scale_color_manual(
-    name = "Microbial group",
-    values = c(
-      "Bacteria" = "#E64B35FF",
-      "Fungi" = "#4DBBD5FF",
-      "Eukaryote" = "#00A087FF"
-    )
-  ) +
+  name = "Microbial group",
+  values = c(
+    "Bacteria" = "#E64B35FF",
+    "Fungi" = "#4DBBD5FF",
+    "Eukaryote" = "#00A087FF"
+  ),
+  labels = c(
+    "Bacteria" = "Bacteria",
+    "Fungi" = "Fungi",
+    "Eukaryote" = "Curated 18S dataset"
+  )
+) +
   labs(
     x = "Site",
     y = expression(q[D]~"(estimate ± 95% CI)")

@@ -143,7 +143,7 @@ p <- ggplot(dfq, aes(x = Type, y = qD, fill = Type)) +
     else NULL } +
   labs(
     x = "Substrate type",
-    y = "Shannon diversity"
+    y = "Exponential Shannon diversity"
   ) +
   theme_minimal(base_size = 15, base_family = "Arial") +
   theme(

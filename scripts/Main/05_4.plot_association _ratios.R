@@ -134,13 +134,28 @@ plot_donut_domain <- function(df, group_cols = c("Site","Category")) {
 }
 
 p_dom <- plot_donut_domain(df_dom_long, group_cols = c("Site","Category")) +
-    labs(y = "Site") +
-    theme(
-        strip.placement = "outside",
-        strip.text.y.left = element_text(angle = 0, hjust = 1, size = 12, face = "bold"),
-        strip.switch.pad.grid = unit(0.2, "cm")
-    ) +
-    facet_grid(Site ~ Category, switch = "y")
+  labs(y = "Site") +
+  theme(
+    strip.placement = "outside",
+    strip.text.y.left = element_text(
+      angle = 0, hjust = 1, size = 12, face = "bold"
+    ),
+    strip.switch.pad.grid = unit(0.2, "cm")
+  ) +
+  facet_grid(
+    Site ~ Category,
+    switch = "y",
+    labeller = labeller(
+      Category = c(
+        "Bac_Bac" = "Bac–Bac",
+        "Fun_Fun" = "Fun–Fun",
+        "Bac_Fun" = "Bac–Fun",
+        "Bac_Euk" = "Bac–AP",
+        "Fun_Euk" = "Fun–AP",
+        "Euk_Euk" = "AP–AP"
+      )
+    )
+  )
 
 print(p_dom)
 
